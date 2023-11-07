@@ -12,6 +12,7 @@ public class Test2 {
         university.addStudents();
         List<Student> students = university.getStudents();
         System.out.println(students);
+        System.out.println(students);
 
         context.close();
     }
