@@ -2,17 +2,18 @@ package aop;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class Test1 {
+import java.util.List;
+
+public class Test3 {
     public static void main(String[] args) {
+        System.out.println("Method main starts");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
+
         Library library = context.getBean("librayBean", Library.class);
-        Book book = context.getBean("book", Book.class);
-        library.getBook();
-//        library.returnMagazine();
-        library.addBook("Ulan", book);
-        library.addMagazine() ;
-        library.getMagazine();
+        String bookName = library.returnBook();
+        System.out.println("Book " + bookName + " returned to library");
 
         context.close();
+        System.out.println("Method main ends");
     }
 }
